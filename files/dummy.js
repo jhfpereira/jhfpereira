@@ -1,3 +1,0 @@
-{
-    "msg": "It worked!"
-}

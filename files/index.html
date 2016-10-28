@@ -9,28 +9,27 @@
     
       <script>
 
-        var xhr = new XMLHttpRequest ();
-
-        xhr.onreadystatechange = function () {
-
-          if ( xhr.readyState === 4 ) {
-            if ( xhr.status === 200 ) {
-              
-              console.log ( xhr.responseText );
-              
-              var parsedJSON = JSON.parse( xhr.responseText );
-              console.log( 'MSG', parsedJSON.msg );
-            }
-          }
-        };
-        
-        xhr.open('GET', '/files/dummy.js');
-
-
-
         var fetch_btn = document.querySelector('.fetch_btn');
 
         fetch_btn.addEventListener('click', function(event) {
+        
+          var xhr = new XMLHttpRequest ();
+
+          xhr.onreadystatechange = function () {
+
+            if ( xhr.readyState === 4 ) {
+              if ( xhr.status === 200 ) {
+                
+                console.log ( xhr.responseText );
+                
+                var parsedJSON = JSON.parse( xhr.responseText );
+                console.log( 'MSG', parsedJSON.msg );
+              }
+            }
+          };
+          
+          xhr.open('GET', '/files/dummy.js');
+      
           xhr.send();
         });
       
